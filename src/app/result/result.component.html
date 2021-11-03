@@ -1,0 +1,35 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card bg-dark mb-5">
+                <div class="card-body text-light  text-center" *ngFor="let answers of this.questions.List_questions; let i = index" >
+                    <h3 class="card-title" > 
+                        {{ answers.Question }}
+                    </h3>
+                    <p  class="card-text mt-2 rounded p-2" *ngFor="let answer of List_of_questions[i].Answers"
+                     [ngClass]="CheckSelected(answer,i)"> 
+                        {{answer.Name}}  
+                        <span class="float-start " *ngIf="IsNotCorrect(answer,i)">
+                            <i class="far fa-times-circle text-dark"></i>
+                        </span>
+
+                        <span class="float-end" *ngIf="IsCorrect(answer,i)">
+                            <i class="far fa-check-circle"></i>
+                        </span>
+                                         
+                    </p>                                     
+                </div>
+                <div class="row mt-5 mb-5">
+                    <div class="col-6 offset-3">
+                            <div class="d-grid">
+                                <button class="btn btn-primary"  (click)="OverAgain()"> Start over again </button>
+                            </div>                    
+                    </div>              
+                </div> 
+            </div>
+            
+        </div>
+        
+        
+    </div>        
+</div>

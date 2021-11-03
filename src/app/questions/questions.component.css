@@ -1,0 +1,7 @@
+p{
+    cursor: pointer;
+}
+
+p:focus{
+    background-color: #0d6efd;
+}
